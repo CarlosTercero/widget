@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'Recuperar el valor d''un camp de text Carlos Farres Lozano - S2AM',
+      title: 'Recuperar el valor d''un camp de text Carlos Farres Lozano - S2AM ',
       home: MyCustomForm(),
     );
   }
