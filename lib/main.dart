@@ -33,7 +33,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Recuperar el valor d\'un camp de text'),
+        title: const Text('Recuperar el valor d\'un camp de text Carlos Farres Lozano S2AM'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
