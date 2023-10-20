@@ -41,7 +41,13 @@ class _MyCustomFormState extends State<MyCustomForm> {
           controller: myController,
         ),
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: Column(
+    mainAxisAlignment: MainAxisAlignment.end,
+    
+    //4 BOTONES CON SUS FUNCIONES DE CADA TIPO DE DIALOG
+    //Showmodalbutton
+    children: [
+      FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
               backgroundColor: Colors.transparent,
@@ -72,7 +78,75 @@ class _MyCustomFormState extends State<MyCustomForm> {
               });
         },
         tooltip: 'Mostra el valor!',
+        backgroundColor: const Color.fromRGBO(246, 10, 10, 0.612),
         child: const Icon(Icons.text_fields),
+      ),
+
+
+      //SimpleDialog
+      const SizedBox(height: 16), // Espacio entre los botones
+      FloatingActionButton(
+        onPressed: () {
+          showDialog(
+            context: context, 
+            builder: (context) {
+              return AlertDialog(
+                content: Text(myController.text),
+                title: const Text('SimpleDialog Carlos Farres'),
+              );
+          },
+          );
+        },
+        tooltip: 'Botón 2',
+        backgroundColor: Colors.blue, // Color del segundo botón
+        child: const Icon(Icons.add), // Icono del segundo botón
+      ),
+
+
+      //AlertDialog
+      const SizedBox(height: 16), // Espacio entre los botones
+      FloatingActionButton(
+        onPressed: () {
+          showDialog(
+            context: context, 
+            builder: (context) {
+              return AlertDialog(
+                title: const Text('SimpleDialog + botoncerrar Carlos Farres'),
+                content: Text(myController.text),
+                actions: [
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: const Text('OK'),
+                    )
+                ],
+              );
+          },
+          );
+        },
+        tooltip: 'Botón 3',
+        backgroundColor: const Color.fromARGB(255, 7, 244, 30), // Color del segundo botón
+        child: const Icon(Icons.add), // Icono del segundo botón
+      ),
+
+
+      //SnaCKbAR
+      const SizedBox(height: 16), // Espacio entre los botones
+      FloatingActionButton(
+        onPressed: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Prueba snackbar CFL'),
+              duration: Duration(seconds: 2),
+              ),
+          );
+        },
+        tooltip: 'Botón 4',
+        backgroundColor: Color.fromARGB(255, 255, 255, 0), // Color del segundo botón
+        child: const Icon(Icons.add), // Icono del segundo botón
+      ),
+      ],
       ),
     );
   }
